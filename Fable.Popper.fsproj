@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <DefineConstants>FABLE_COMPILER</DefineConstants>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src/PopperJsCore/CreatePopper.fs" />
+    <Compile Include="src/PopperJsCore/Enums.fs" />
+    <Compile Include="src/PopperJsCore/Popper.fs" />
+    <Compile Include="src/PopperJsCore/Types.fs" />
+    <Compile Include="src/React-Popper.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" Version="6.0.3" />
+    <PackageReference Include="Fable.Core" Version="3.6.1" />
+    <PackageReference Include="Fable.Browser.DOM" Version="2.9.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".config\dotnet-tools.json" />
+  </ItemGroup>
+</Project>
