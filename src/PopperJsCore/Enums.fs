@@ -1,9 +1,9 @@
 // ts2fable 0.7.1
 module rec PopperJsCore.Enums
 open System
+open Browser.Types
 open Fable.Core
 open Fable.Core.JS
-
 type Array<'T> = System.Collections.Generic.IList<'T>
 
 let [<Import("top","@popperjs/core/lib/enums")>] top: string = jsNative
@@ -31,20 +31,26 @@ let [<Import("write","@popperjs/core/lib/enums")>] write: string = jsNative
 let [<Import("afterWrite","@popperjs/core/lib/enums")>] afterWrite: string = jsNative
 let [<Import("modifierPhases","@popperjs/core/lib/enums")>] modifierPhases: Array<ModifierPhases> = jsNative
 
-type BasePlacement =
-    obj
+type [<StringEnum>] [<RequireQualifiedAccess>] BasePlacement =
+    | [<CompiledName "top">] Top
+    | [<CompiledName "bottom">] Bottom
+    | [<CompiledName "right">] Right
+    | [<CompiledName "left">] Left
 
-type Variation =
-    obj
+type [<StringEnum>] [<RequireQualifiedAccess>] Variation =
+    | [<CompiledName "start">] Start
+    | [<CompiledName "end">] End
 
 type Boundary =
-    U3<Element, Array<Element>, obj>
+    U3<ElementType, Array<ElementType>, obj>
 
-type RootBoundary =
-    U2<obj, string>
+type [<StringEnum>] [<RequireQualifiedAccess>] RootBoundary =
+    | [<CompiledName "viewport">] Viewport
+    | [<CompiledName "document">] Document
 
-type Context =
-    obj
+type [<StringEnum>] [<RequireQualifiedAccess>] Context =
+    | [<CompiledName "popper">] Popper
+    | [<CompiledName "reference">] Reference
 
 type [<StringEnum>] [<RequireQualifiedAccess>] VariationPlacement =
     | [<CompiledName "top-start">] TopStart
@@ -57,7 +63,7 @@ type [<StringEnum>] [<RequireQualifiedAccess>] VariationPlacement =
     | [<CompiledName "left-end">] LeftEnd
 
 type [<StringEnum>] [<RequireQualifiedAccess>] AutoPlacement =
-    | Auto
+    | [<CompiledName "auto">]Auto
     | [<CompiledName "auto-start">] AutoStart
     | [<CompiledName "auto-end">] AutoEnd
 
@@ -67,5 +73,13 @@ type ComputedPlacement =
 type Placement =
     U3<AutoPlacement, BasePlacement, VariationPlacement>
 
-type ModifierPhases =
-    obj
+type [<StringEnum>] [<RequireQualifiedAccess>] ModifierPhases =
+    | [<CompiledName "beforeRead">] BeforeRead
+    | [<CompiledName "read">] Read
+    | [<CompiledName "afterRead">] AfterRead
+    | [<CompiledName "beforeMain">] BeforeMain
+    | [<CompiledName "main">] Main
+    | [<CompiledName "afterMain">] AfterMain
+    | [<CompiledName "beforeWrite">] BeforeWrite
+    | [<CompiledName "write">] Write
+    | [<CompiledName "afterWrite">] AfterWrite

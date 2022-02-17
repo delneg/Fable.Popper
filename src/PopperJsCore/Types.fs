@@ -59,16 +59,16 @@ type [<AllowNullLiteral>] OffsetData =
     interface end
 
 type [<AllowNullLiteral>] State =
-    abstract elements: StateElements with get, set
-    abstract options: OptionsGeneric<obj option> with get, set
+//    abstract elements: StateElements with get, set
+//    abstract options: OptionsGeneric<obj option> with get, set
     abstract placement: Placement with get, set
     abstract strategy: PositioningStrategy with get, set
-    abstract orderedModifiers: Array<Modifier<obj option, obj option>> with get, set
+//    abstract orderedModifiers: Array<Modifier<obj option, obj option>> with get, set
     abstract rects: StateRects with get, set
-    abstract scrollParents: StateScrollParents with get, set
-    abstract styles: StateStyles with get, set
-    abstract attributes: StateAttributes with get, set
-    abstract modifiersData: StateModifiersData with get, set
+//    abstract scrollParents: StateScrollParents with get, set
+//    abstract styles: StateStyles with get, set
+//    abstract attributes: StateAttributes with get, set
+//    abstract modifiersData: StateModifiersData with get, set
     abstract reset: bool with get, set
 
 type SetAction<'S> =
@@ -140,7 +140,7 @@ type Padding =
     U2<float, obj>
 
 type [<AllowNullLiteral>] VirtualElement =
-    abstract getBoundingClientRect: (unit -> U2<ClientRect, DOMRect>) with get, set
+    abstract getBoundingClientRect: (unit -> ClientRect) with get, set
     abstract contextElement: Element option with get, set
 
 type [<AllowNullLiteral>] StateElements =

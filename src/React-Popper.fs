@@ -4,29 +4,30 @@ open System
 open Fable.Core
 open Fable.Core.JS
 open Browser.Types
-
+open PopperJsCore.Enums
+open PopperJsCore.Types
+open Fable.React
 type ReadonlyArray<'T> = System.Collections.Generic.IReadOnlyList<'T>
 
-module PopperJS = @popperjs_core
 
 type [<AllowNullLiteral>] IExports =
     abstract Manager: ManagerStatic
     abstract Reference: ReferenceStatic
     abstract Popper: PopperStatic
-    abstract usePopper: ?referenceElement: U2<Element, PopperJS.VirtualElement> * ?popperElement: HTMLElement * ?options: obj -> UsePopperReturn
+    abstract usePopper: ?referenceElement: U2<Element, VirtualElement> * ?popperElement: HTMLElement * ?options: obj -> UsePopperReturn
 
 type [<AllowNullLiteral>] UsePopperReturn =
     abstract styles: UsePopperReturnStyles with get, set
     abstract attributes: UsePopperReturnAttributes with get, set
-    abstract state: PopperJS.State option with get, set
-    abstract update: PopperJS.Instance option with get, set
-    abstract forceUpdate: PopperJS.Instance option with get, set
+    abstract state: State option with get, set
+    abstract update: Instance option with get, set
+    abstract forceUpdate: Instance option with get, set
 
 type UnionWhere<'U, 'M> =
     obj
 
 type [<AllowNullLiteral>] ManagerProps =
-    abstract children: React.ReactNode with get, set
+    abstract children: ReactElement with get, set
 
 type [<AllowNullLiteral>] Manager =
     inherit React.Component<ManagerProps, ManagerReactComponent>
@@ -57,7 +58,7 @@ type [<AllowNullLiteral>] PopperArrowProps =
 type [<AllowNullLiteral>] PopperChildrenProps =
     abstract ref: React.Ref<obj option> with get, set
     abstract style: React.CSSProperties with get, set
-    abstract placement: PopperJS.Placement with get, set
+    abstract placement: Placement with get, set
     abstract isReferenceHidden: bool option with get, set
     abstract hasPopperEscaped: bool option with get, set
     abstract update: (unit -> Promise<obj option>) with get, set
@@ -65,13 +66,13 @@ type [<AllowNullLiteral>] PopperChildrenProps =
     abstract arrowProps: PopperArrowProps with get, set
 
 type StrictModifierNames =
-    NonNullable<PopperJS.StrictModifiers>
+    NonNullable<StrictModifiers>
 
 type StrictModifier =
     StrictModifier<obj>
 
 type StrictModifier<'Name> =
-    UnionWhere<PopperJS.StrictModifiers, StrictModifierUnionWhere<'Name>>
+    UnionWhere<StrictModifiers, StrictModifierUnionWhere<'Name>>
 
 type Modifier<'Options> =
     Modifier<obj, 'Options>
@@ -83,9 +84,9 @@ type [<AllowNullLiteral>] PopperProps<'Modifiers> =
     abstract children: (PopperChildrenProps -> React.ReactNode) with get, set
     abstract innerRef: React.Ref<obj option> option with get, set
     abstract modifiers: ReadonlyArray<Modifier<'Modifiers>> option with get, set
-    abstract placement: PopperJS.Placement option with get, set
-    abstract strategy: PopperJS.PositioningStrategy option with get, set
-    abstract referenceElement: U2<HTMLElement, PopperJS.VirtualElement> option with get, set
+    abstract placement: Placement option with get, set
+    abstract strategy: PositioningStrategy option with get, set
+    abstract referenceElement: U2<HTMLElement, VirtualElement> option with get, set
     abstract onFirstUpdate: (obj -> unit) option with get, set
 
 type [<AllowNullLiteral>] Popper<'Modifiers> =

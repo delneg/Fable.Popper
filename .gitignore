@@ -257,3 +257,5 @@ packages/
 .idea/
 *.sln.iml
 *.orig
+
+*.fs.js
