@@ -54,7 +54,7 @@ createPopper(popcorn,tooltip,settingsjs) |> ignore
 ```
 
 
-Via strongly-type F# DSL:
+Via strongly-typed F# DSL:
 ```f#
 open Browser.Types
 open Browser.Dom
