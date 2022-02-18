@@ -10,7 +10,8 @@ type [<AllowNullLiteral>] PopperGeneratorArgs =
     abstract defaultModifiers: Array<Modifier<obj option, obj option>> option with get, set
     abstract defaultOptions: obj option with get, set
     
-let [<Import("createPopper","@popperjs/core/lib/createPopper")>] createPopper: (U2<Element, VirtualElement> -> HTMLElement -> obj -> Instance) = jsNative
+[<Import("createPopper","@popperjs/core")>]
+let createPopper(reference: Element, popper: HTMLElement, options: obj): Instance = jsNative
 
 type [<AllowNullLiteral>] IExports =
     abstract popperGenerator: ?generatorOptions: PopperGeneratorArgs -> (U2<Element, VirtualElement> -> HTMLElement -> obj -> Instance)

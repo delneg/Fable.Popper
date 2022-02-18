@@ -18,7 +18,7 @@
     "clean:fable": "dotnet fable clean --yes",
     "fable": "dotnet fable --noCache --sourceMaps",
     "dev:fable": "dotnet fable watch --noRestore --sourceMaps",
-    "dev:start": "parcel serve src/index.html",
+    "dev:start": "parcel serve index.html",
     "build": "dotnet fable --noCache && parcel build index.html"
   },
   "dependencies": {

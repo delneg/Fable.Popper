@@ -16,8 +16,10 @@
         <PackageReference Include="Feliz" Version="1.58.1" />
     </ItemGroup>
     <ItemGroup>
-      <Content Include="index.html" />
-      <Content Include="package.json" />
+      <ProjectReference Include="../src/Fable.Popper.fsproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="styles.css" />
     </ItemGroup>
 
 </Project>

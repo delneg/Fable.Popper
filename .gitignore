@@ -259,5 +259,6 @@ packages/
 *.orig
 
 *.fs.js
+*.fs.js.map
 demo/dist
 demo/.parcel-cache

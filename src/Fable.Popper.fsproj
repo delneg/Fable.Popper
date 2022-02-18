@@ -16,7 +16,6 @@
     <Compile Include="./PopperJsCore/Enums.fs" />
     <Compile Include="./PopperJsCore/Types.fs" />
     <Compile Include="./PopperJsCore/CreatePopper.fs" />
-    <Compile Include="./PopperJsCore/Popper.fs" />
 <!--    <Compile Include="src/React-Popper.fs" />-->
     <None Include="../LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
