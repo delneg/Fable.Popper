@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <Version>1.0.0</Version>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <DefineConstants>FABLE_COMPILER</DefineConstants>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageId>Fable.PopperJS.React</PackageId>
+        <Authors>delneg</Authors>
+        <Description>Fable binding to react-popper, a react wrapper over popperjs</Description>
+        <RepositoryUrl>https://github.com/delneg/Fable.PopperJS.git</RepositoryUrl>
+        <PackageProjectUrl>https://delneg.github.io/Fable.PopperJS/</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/delneg/Fable.PopperJS/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageTags>fsharp;fable;react;popper;popperjs;tooltip</PackageTags>
+    </PropertyGroup>
+    <PropertyGroup>
+        <NpmDependencies>
+            <NpmPackage Name="@popperjs/core" Version=">= 2.11.2 lt 3.0" ResolutionStrategy="Max"/>
+            <NpmPackage Name="react-popper" Version=">= 2.2.5 lt 3.0" ResolutionStrategy="Max"/>
+        </NpmDependencies>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="./React-Popper.fs"/>
+        <None Include="../LICENSE" Pack="true" PackagePath=""/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="../Fable.PopperJS.fsproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="FSharp.Core" Version="6.0.3"/>
+        <PackageReference Include="Fable.Core" Version="3.6.1"/>
+        <PackageReference Include="Fable.Browser.DOM" Version="2.9.0"/>
+        <PackageReference Include="Feliz" Version="1.58.1" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="*.fsproj; *.fs; *.js;" Exclude="**\*.fs.js" PackagePath="fable/"/>
+    </ItemGroup>
+</Project>

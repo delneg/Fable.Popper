@@ -4,6 +4,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fable.PopperJS", "src/Fable
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fable.Popper.Demo", "demo/Fable.Popper.Demo.fsproj", "{89260D08-0914-43E6-B23D-4F5E6B8B419C}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fable.PopperJS.React", "src\Fable.PopperJS.React\Fable.PopperJS.React.fsproj", "{5342A576-416A-4BC4-A139-CCC5925A6A24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{89260D08-0914-43E6-B23D-4F5E6B8B419C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89260D08-0914-43E6-B23D-4F5E6B8B419C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89260D08-0914-43E6-B23D-4F5E6B8B419C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5342A576-416A-4BC4-A139-CCC5925A6A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5342A576-416A-4BC4-A139-CCC5925A6A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5342A576-416A-4BC4-A139-CCC5925A6A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5342A576-416A-4BC4-A139-CCC5925A6A24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

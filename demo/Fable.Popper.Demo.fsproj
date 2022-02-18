@@ -17,6 +17,7 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="../src/Fable.PopperJS.fsproj" />
+      <ProjectReference Include="../src/Fable.PopperJS.React/Fable.PopperJS.React.fsproj" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="styles.css" />
