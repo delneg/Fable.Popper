@@ -1,7 +1,6 @@
 ﻿namespace Fable.Popper.Demo
 
 open Browser.Types
-open Fable.Core
 open Feliz
 open Browser.Dom
 open Fable.Core.JsInterop
@@ -42,37 +41,34 @@ module App =
                                               .withOptions(createObj [ "offset" ==> [0;8] ])
                                           )
                        .Finalize()
-    JS.console.log(settings)
     
     Popper.createPopper(popcorn2, tooltip2, settings) |> ignore
     
-//    [<ReactComponent>]
-//    let HelloWorld() =
-//        let (count, setCount) = React.useState(0)
-//        
-//        
-//        
-//        Html.div [
-//            Html.div [
-//            prop.id "popcorn"
-//            prop.ariaDescribedBy "tooltip"
-//            ]
-//            Html.div [
-//                prop.id "tooltip"
-//                prop.role "tooltip"
-//                prop.children [
-//                    Html.text "My tooltip"
-//                    Html.div [
-//                        prop.id "arrow"
-//                        prop.custom ("data-popper-arrow","")
-//                    ]
-//                ]
-//            ]
-//        ]
-//        
-//    
-//
-//    ReactDOM.render(
-//        HelloWorld(),
-//        document.getElementById "app"
-//    )
+    [<ReactComponent>]
+    let HelloWorld() =
+        let (count, setCount) = React.useState(0)
+        
+        
+        Html.div [
+            prop.style [
+                style.paddingTop 50
+                style.color.coral
+            ]
+            
+            prop.children [
+                Html.p [
+                    prop.text count
+                ]
+                Html.button [
+                    prop.text "Increment"
+                    prop.onClick (fun _ -> setCount (count+1))
+                ]
+            ]
+        ]
+        
+    
+
+    ReactDOM.render(
+        HelloWorld(),
+        document.getElementById "react-app"
+    )
