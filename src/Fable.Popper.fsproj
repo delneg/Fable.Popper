@@ -10,7 +10,7 @@
     <Description>Fable library for popperjs</Description>
     <RepositoryUrl>https://github.com/delneg/Fable.PopperJS.git</RepositoryUrl>
     <PackageProjectUrl>https://delneg.github.io/Fable.PopperJS/</PackageProjectUrl>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseUrl>https://github.com/delneg/Fable.PopperJS/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>fsharp;fable;react;popper</PackageTags>
   </PropertyGroup>
   <PropertyGroup>
