@@ -6,7 +6,7 @@ open Browser.Dom
 open Fable.Core.JsInterop
 open PopperJsCore.Enums
 open PopperJsCore.CreatePopper
-
+open Fable.PopperJS.React
 
 module App =
    
@@ -45,23 +45,37 @@ module App =
     Popper.createPopper(popcorn2, tooltip2, settings) |> ignore
     
     [<ReactComponent>]
-    let HelloWorld() =
-        let (count, setCount) = React.useState(0)
+    let Example() =        
+        let referenceElement = React.useRef(None)
+        let popperElement = React.useRef(None)
+        let arrowElement = React.useRef(None)
         
-        
+        let options = PopperOptions()
+                          .withAddedModifier(PopperModifier()
+                                                 .withName("arrow")
+                                                 .withOptions(createObj ["element" ==> arrowElement])
+                                             )
+                          .Finalize()
+        let ret = React.usePopper(referenceElement, popperElement, options :?> usePopperOptions)
+        Fable.Core.JS.console.log(ret)
         Html.div [
-            prop.style [
-                style.paddingTop 50
-                style.color.coral
-            ]
-            
-            prop.children [
-                Html.p [
-                    prop.text count
-                ]
+            prop.children[
                 Html.button [
-                    prop.text "Increment"
-                    prop.onClick (fun _ -> setCount (count+1))
+                    prop.type' "button"
+                    prop.ref referenceElement
+                ]
+//                Html.div (List.append ret.attributes.popper [
+                Html.div[
+                    prop.ref popperElement
+//                    prop.style ret.styles.popper
+                    prop.text "Popper element"
+                    prop.children [
+                        Html.div [
+                            prop.ref arrowElement
+//                            prop.style 
+//                            prop.style ret.styles.arrow
+                        ]
+                    ]
                 ]
             ]
         ]
@@ -69,6 +83,6 @@ module App =
     
 
     ReactDOM.render(
-        HelloWorld(),
+        Example(),
         document.getElementById "react-app"
     )
