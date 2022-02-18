@@ -5,12 +5,18 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <DefineConstants>FABLE_COMPILER</DefineConstants>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageId>Fable.Popper</PackageId>
+    <PackageId>Fable.PopperJS</PackageId>
+    <Authors>delneg</Authors>
     <Description>Fable library for popperjs</Description>
-    <RepositoryUrl>https://github.com/delneg/Fable.Popper.git</RepositoryUrl>
-    <PackageProjectUrl>https://delneg.github.io/Fable.Popper/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/delneg/Fable.PopperJS.git</RepositoryUrl>
+    <PackageProjectUrl>https://delneg.github.io/Fable.PopperJS/</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageTags>fsharp;fable;react;popper</PackageTags>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NpmDependencies>
+      <NpmPackage Name="@popperjs/core" Version=">= 2.11.2 lt 3.0" ResolutionStrategy="Max" />
+    </NpmDependencies>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="./PopperJsCore/Enums.fs" />

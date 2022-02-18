@@ -56,3 +56,55 @@ body {
 #tooltip[data-popper-placement^='right'] > #arrow {
     left: -4px;
 }
+
+
+#popcorn2 {
+    display: inline-block;
+    width: 134px;
+    height: 120px;
+    background-image: url('https://popper.js.org/images/popcorn-box.svg');
+}
+
+#tooltip2 {
+    display: inline-block;
+    background: #ffffff;
+    color: #643045;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+#arrow2,
+#arrow2::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: inherit;
+}
+
+#arrow2 {
+    visibility: hidden;
+}
+
+#arrow2::before {
+    visibility: visible;
+    content: '';
+    transform: rotate(45deg);
+}
+
+#tooltip2[data-popper-placement^='top'] > #arrow2 {
+    bottom: -4px;
+}
+
+#tooltip2[data-popper-placement^='bottom'] > #arrow2 {
+    top: -4px;
+}
+
+#tooltip2[data-popper-placement^='left'] > #arrow2 {
+    right: -4px;
+}
+
+#tooltip2[data-popper-placement^='right'] > #arrow2 {
+    left: -4px;
+}

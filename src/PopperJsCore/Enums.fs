@@ -41,8 +41,9 @@ type [<StringEnum>] [<RequireQualifiedAccess>] Variation =
     | [<CompiledName "start">] Start
     | [<CompiledName "end">] End
 
+type [<StringEnum>] [<RequireQualifiedAccess>] ClippingParents = | [<CompiledName "clippingParents">] ClippingParents 
 type Boundary =
-    U3<ElementType, Array<ElementType>, obj>
+    U3<Element, Array<Element>, ClippingParents>
 
 type [<StringEnum>] [<RequireQualifiedAccess>] RootBoundary =
     | [<CompiledName "viewport">] Viewport

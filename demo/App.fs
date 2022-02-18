@@ -5,9 +5,8 @@ open Fable.Core
 open Feliz
 open Browser.Dom
 open Fable.Core.JsInterop
-open PopperJsCore
 open PopperJsCore.Enums
-open PopperJsCore.Types
+open PopperJsCore.CreatePopper
 
 
 module App =
@@ -19,7 +18,7 @@ module App =
     let tooltip = document.querySelector("#tooltip") :?> HTMLElement
     
     let settingsjs = createObj [
-        "placement" ==> "top"
+        "placement" ==> "bottom"
         "modifiers" ==> [|
             createObj [
                 "name" ==> "offset"
@@ -31,54 +30,21 @@ module App =
         |]
     ]
     
-//    type Settings() =
-//        interface OptionsGeneric<_> with
-//            member this.placement = BasePlacement.Top
-//            
+    createPopper(popcorn,tooltip,settingsjs) |> ignore
+  
     
-//    let settings() = { new OptionsGeneric<Modifier<string,obj>> with
-//                            member this.placement = BasePlacement.Top
-//                            member this.modifiers = [||]
-//                            member this.strategy = PositioningStrategy.Absolute
-//                            member this.onFirstUpdate = None
-//                        }
-//    let settings = PopperJsCore.CreatePopper.PopperOptions()
-
-//    let settings = {
-//        Placement = Placement.Case2 BasePlacement.Top
-//        Modifiers = Some [|
-//            createObj [
-//                "name" ==> "offset"
-//                "options" ==> createObj [
-//                    "offset" ==> [|0;8|]
-//                ]
-//            ]
-//        |]
-//        Strategy = None
-//        onFirstUpdate = None }
-    let settings = PopperJsCore.CreatePopper.PopperOptions()
-                       .withUpdatedPlacement(Placement.Case2 BasePlacement.Left)
-                       .withUpdatedModifiers([|
-                            createObj [
-                                "name" ==> "offset"
-                                "options" ==> createObj [
-                                    "offset" ==> [|0;8|]
-                                ]
-                            ]
-                        |])
+    let popcorn2 = document.querySelector("#popcorn2")
+    let tooltip2 = document.querySelector("#tooltip2") :?> HTMLElement
+    let settings = PopperOptions()
+                       .withPlacement(Placement.Case2 BasePlacement.Right)
+                       .withAddedModifier(PopperModifier()
+                                              .withName("offset")
+                                              .withOptions(createObj [ "offset" ==> [0;8] ])
+                                          )
+                       .Finalize()
     JS.console.log(settings)
-//    CreatePopper.createPopper (popcorn, tooltip,settings) |> ignore
-    PopperJsCore.CreatePopper.Popper.createPopper(popcorn, tooltip, jsOptions<OptionsGeneric<obj>>(fun x ->
-        x.placement <- Placement.Case2 BasePlacement.Top
-        x.modifiers <- [|
-                            createObj [
-                                "name" ==> "offset"
-                                "options" ==> createObj [
-                                    "offset" ==> [|0;8|]
-                                ]
-                            ]
-                        |]
-        )) |> ignore
+    
+    Popper.createPopper(popcorn2, tooltip2, settings) |> ignore
     
 //    [<ReactComponent>]
 //    let HelloWorld() =

@@ -113,16 +113,10 @@ type [<AllowNullLiteral>] Options =
 
 type [<AllowNullLiteral>] OptionsGeneric<'TModifier> =
     abstract placement: Placement with get, set
-    abstract modifiers: 'TModifier array with get, set
-    abstract strategy: PositioningStrategy option with get, set
+    abstract modifiers: Array<'TModifier> option with get, set
+    abstract strategy: PositioningStrategy with get, set
     abstract onFirstUpdate: (obj -> unit) option with get, set
-type OptionsRecordGeneric =
-    {
-        Placement: Placement
-        Modifiers: (obj array) option
-        Strategy: PositioningStrategy option
-        onFirstUpdate: (obj -> unit) option
-    }
+    
 type [<AllowNullLiteral>] UpdateCallback =
     [<Emit "$0($1...)">] abstract Invoke: arg0: State -> unit
 
@@ -185,3 +179,5 @@ type [<AllowNullLiteral>] StateModifiersData =
     abstract preventOverflow: Offsets option with get, set
     abstract popperOffsets: Offsets option with get, set
     [<Emit "$0[$1]{{=$2}}">] abstract Item: key: string -> obj option with get, set
+
+
