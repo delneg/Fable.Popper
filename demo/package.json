@@ -1,0 +1,39 @@
+{
+  "name": "Fable.Popper.Demo",
+  "version": "1.0.0",
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "postinstall": "dotnet tool restore",
+    "clean:fable": "dotnet fable clean --yes",
+    "fable": "dotnet fable --noCache --sourceMaps",
+    "dev:fable": "dotnet fable watch --noRestore --sourceMaps",
+    "dev:start": "parcel serve src/index.html",
+    "build": "dotnet fable --noCache && parcel build index.html"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@parcel/config-default": "^2.3.1",
+    "autoprefixer": "^10.4.2",
+    "parcel": "^2.2.1",
+    "@parcel/core": "^2.3.2",
+    "ts2fable": "^0.7.1",
+    "postcss": "^8.4.6",
+    "postcss-import": "^14.0.2",
+    "postcss-nested": "^5.0.6"
+  }
+}

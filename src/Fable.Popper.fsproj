@@ -13,12 +13,12 @@
     <PackageTags>fsharp;fable;react;popper</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="src/PopperJsCore/Enums.fs" />
-    <Compile Include="src/PopperJsCore/Types.fs" />
-    <Compile Include="src/PopperJsCore/CreatePopper.fs" />
-    <Compile Include="src/PopperJsCore/Popper.fs" />
+    <Compile Include="./PopperJsCore/Enums.fs" />
+    <Compile Include="./PopperJsCore/Types.fs" />
+    <Compile Include="./PopperJsCore/CreatePopper.fs" />
+    <Compile Include="./PopperJsCore/Popper.fs" />
 <!--    <Compile Include="src/React-Popper.fs" />-->
-    <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    <None Include="../LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FSharp.Core" Version="6.0.3" />

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <RootNamespace>Fable.Popper.Demo</RootNamespace>
+        <DefineConstants>FABLE_COMPILER</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="App.fs" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="FSharp.Core" Version="6.0.3" />
+        <PackageReference Include="Fable.Core" Version="3.6.1" />
+        <PackageReference Include="Feliz" Version="1.58.1" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="index.html" />
+      <Content Include="package.json" />
+    </ItemGroup>
+
+</Project>

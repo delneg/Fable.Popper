@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fable.Popper", "Fable.Popper.fsproj", "{CE818020-9862-45B3-ABE7-1BD9E08F5330}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fable.Popper", "src/Fable.Popper.fsproj", "{CE818020-9862-45B3-ABE7-1BD9E08F5330}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fable.Popper.Demo", "demo/Fable.Popper.Demo.fsproj", "{89260D08-0914-43E6-B23D-4F5E6B8B419C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +14,9 @@ Global
 		{CE818020-9862-45B3-ABE7-1BD9E08F5330}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE818020-9862-45B3-ABE7-1BD9E08F5330}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE818020-9862-45B3-ABE7-1BD9E08F5330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89260D08-0914-43E6-B23D-4F5E6B8B419C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89260D08-0914-43E6-B23D-4F5E6B8B419C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89260D08-0914-43E6-B23D-4F5E6B8B419C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89260D08-0914-43E6-B23D-4F5E6B8B419C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
