@@ -14,11 +14,13 @@
         <PackageReference Include="FSharp.Core" Version="6.0.3" />
         <PackageReference Include="Fable.Core" Version="3.6.1" />
         <PackageReference Include="Feliz" Version="1.58.1" />
+        <PackageReference Include="Fable.PopperJS" Version="1.0.0" />
+        <PackageReference Include="Fable.PopperJS.React" Version="1.0.0" />
     </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="../src/Fable.PopperJS/Fable.PopperJS.fsproj" />
-      <ProjectReference Include="../src/Fable.PopperJS.React/Fable.PopperJS.React.fsproj" />
-    </ItemGroup>
+<!--    <ItemGroup>-->
+<!--      <ProjectReference Include="../src/Fable.PopperJS/Fable.PopperJS.fsproj" />-->
+<!--      <ProjectReference Include="../src/Fable.PopperJS.React/Fable.PopperJS.React.fsproj" />-->
+<!--    </ItemGroup>-->
     <ItemGroup>
       <Content Include="styles.css" />
     </ItemGroup>
