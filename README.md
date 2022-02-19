@@ -9,7 +9,7 @@ and
 
 ## Demo
 
-https://delneg.github.io/fable.popperjs/
+https://delneg.github.io/Fable.PopperJS/
 
 
 ## Installation Using Femto
