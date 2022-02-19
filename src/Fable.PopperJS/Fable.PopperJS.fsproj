@@ -19,10 +19,10 @@
     </NpmDependencies>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="./PopperJsCore/Enums.fs" />
-    <Compile Include="./PopperJsCore/Types.fs" />
-    <Compile Include="./PopperJsCore/CreatePopper.fs" />
-    <None Include="../LICENSE" Pack="true" PackagePath="" />
+    <Compile Include="Enums.fs" />
+    <Compile Include="Types.fs" />
+    <Compile Include="CreatePopper.fs" />
+    <None Include="../../LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FSharp.Core" Version="6.0.3" />

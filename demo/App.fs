@@ -4,8 +4,8 @@ open Browser.Types
 open Feliz
 open Browser.Dom
 open Fable.Core.JsInterop
-open PopperJsCore.Enums
-open PopperJsCore.CreatePopper
+open Fable.PopperJS.Enums
+open Fable.PopperJS.CreatePopper
 open Fable.PopperJS.React
 open Fable.Core.JS
 module App =

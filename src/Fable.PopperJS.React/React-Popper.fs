@@ -3,8 +3,7 @@ module rec Fable.PopperJS.React
 open System.Collections.Generic
 open Fable.Core
 open Browser.Types
-open PopperJsCore.Enums
-open PopperJsCore.Types
+open Fable.PopperJS.Types
 open Feliz
 
 type ReadonlyArray<'T> = System.Collections.Generic.IReadOnlyList<'T>

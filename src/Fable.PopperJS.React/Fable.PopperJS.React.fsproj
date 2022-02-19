@@ -21,10 +21,10 @@
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="./React-Popper.fs"/>
-        <None Include="../LICENSE" Pack="true" PackagePath=""/>
+        <None Include="../../LICENSE" Pack="true" PackagePath=""/>
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="../Fable.PopperJS.fsproj"/>
+        <ProjectReference Include="../Fable.PopperJS/Fable.PopperJS.fsproj"/>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="FSharp.Core" Version="6.0.3"/>

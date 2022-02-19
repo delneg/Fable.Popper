@@ -1,10 +1,10 @@
 // ts2fable 0.7.1
-module PopperJsCore.Types
+module Fable.PopperJS.Types
 open System
 open Fable.Core
 open Fable.Core.JS
 open Browser.Types
-open PopperJsCore.Enums
+open Fable.PopperJS.Enums
 
 type Array<'T> = System.Collections.Generic.IList<'T>
 

@@ -16,7 +16,7 @@
         <PackageReference Include="Feliz" Version="1.58.1" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="../src/Fable.PopperJS.fsproj" />
+      <ProjectReference Include="../src/Fable.PopperJS/Fable.PopperJS.fsproj" />
       <ProjectReference Include="../src/Fable.PopperJS.React/Fable.PopperJS.React.fsproj" />
     </ItemGroup>
     <ItemGroup>

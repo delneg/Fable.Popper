@@ -1,9 +1,7 @@
 // ts2fable 0.7.1
-module rec PopperJsCore.Enums
-open System
+module rec Fable.PopperJS.Enums
 open Browser.Types
 open Fable.Core
-open Fable.Core.JS
 type Array<'T> = System.Collections.Generic.IList<'T>
 
 let [<Import("top","@popperjs/core/lib/enums")>] top: string = jsNative
