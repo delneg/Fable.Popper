@@ -6,6 +6,12 @@ and
 
 [React-popper](https://popper.js.org/react-popper/v2/)
 
+
+## Demo
+
+https://delneg.github.io/fable.popperjs/
+
+
 ## Installation Using Femto
 
 Using [Femto](https://github.com/Zaid-Ajaj/Femto) you can install the library and its npm dependency in one go:
