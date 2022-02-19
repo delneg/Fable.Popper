@@ -19,7 +19,8 @@
     "fable": "dotnet fable --noCache --sourceMaps",
     "dev:fable": "dotnet fable watch --noRestore --sourceMaps",
     "dev:start": "parcel serve index.html",
-    "build": "dotnet fable --noCache && parcel build index.html"
+    "build": "dotnet fable --noCache && parcel build index.html ",
+    "build:pages": "dotnet fable --noCache && parcel build index.html --public-url /Fable.PopperJS/"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",

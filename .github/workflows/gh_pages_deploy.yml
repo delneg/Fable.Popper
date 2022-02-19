@@ -35,7 +35,7 @@ jobs:
       - name: Install
         run: cd demo && pnpm install
       - name: Build
-        run: cd demo && pnpm run build
+        run: cd demo && pnpm run build:pages
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
