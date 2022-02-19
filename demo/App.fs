@@ -63,7 +63,7 @@ module App =
                 Html.button [
                     prop.type' "button"
                     prop.ref setReferenceElement
-                    prop.text "Reference element"
+                    prop.text "React hook"
                 ]
                 Html.div[
                     prop.ref setPopperElement
