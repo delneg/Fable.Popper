@@ -7,7 +7,7 @@ open Fable.Core.JsInterop
 open PopperJsCore.Enums
 open PopperJsCore.CreatePopper
 open Fable.PopperJS.React
-
+open Fable.Core.JS
 module App =
    
     
@@ -47,9 +47,6 @@ module App =
     [<ReactComponent>]
     let Example() =
         let (referenceElement: Element, setReferenceElement) = React.useState(null)
-//        let referenceElement = React.useRef(None)
-//        let popperElement = React.useRef(None)
-//        let arrowElement = React.useRef(None)
         let (popperElement: Element, setPopperElement) = React.useState(null)
         let (arrowElement: Element, setArrowElement) = React.useState(null)
         
@@ -60,23 +57,6 @@ module App =
                                              )
                           .Finalize()
         let ret = React.usePopper(Fable.Core.Case1 referenceElement, popperElement :?> HTMLElement, options :?> usePopperOptions)
-        Fable.Core.JS.console.log(ret)
-//        ret.attributes.popper
-//        Fable.Core.JsInterop.
-        
-        if ret.attributes.popper.IsSome then
-            Fable.Core.JS.console.log(Fable.Core.JS.Constructors.Object.keys(ret.attributes.popper))
-//        for kv in ret.attributes.popper do
-//            Fable.Core.JS.console.log(kv)
-//            Fable.Core.JS.console.log(kv.valueOf())
-        let popperProps =
-            match ret.attributes.popper with
-            | Some attrs ->
-                [
-                    for (key,value) in Fable.Core.JS.Constructors.Object.entries attrs do
-                        yield prop.custom(key,value)
-                ]
-            | None -> []
         Html.div [
             prop.style [style.paddingTop 50]
             prop.children[
@@ -84,12 +64,13 @@ module App =
                     prop.type' "button"
                     prop.ref setReferenceElement
                     prop.text "Reference element"
-                    prop.onClick (fun _ -> if ret.update.IsSome then ret.update.Value())
                 ]
                 Html.div[
                     prop.ref setPopperElement
                     prop.custom("style",ret.styles.popper)
-                    yield! popperProps
+                    if ret.attributes.popper.IsSome then
+                        for (key,value) in Constructors.Object.entries ret.attributes.popper.Value do
+                            prop.custom(key,value)
                     prop.children [
                         Html.text "Popper element"
                         Html.div [
