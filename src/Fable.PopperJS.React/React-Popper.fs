@@ -123,14 +123,14 @@ type usePopperOptions =
     abstract modifiers: ReadonlyArray<Modifier<string,obj>> with get ,set
 
 type usePopperReturnObj<'T> =
-    abstract popper: 'T list with get,set
-    abstract arrow: 'T list with get,set
+    abstract popper: 'T with get,set
+    abstract arrow: 'T with get,set
 
 type [<AllowNullLiteral>] usePopperReturn =
-    abstract styles: usePopperReturnObj<IStyleAttribute> with get, set
-    abstract attributes: usePopperReturnObj<IReactProperty>with get, set
+    abstract styles: usePopperReturnObj<IReactProperty list> with get, set
+    abstract attributes: usePopperReturnObj<JS.Object option>with get, set
     abstract state: State option with get, set
-    abstract update: Instance option with get, set
+    abstract update: (unit -> unit) option with get, set
     abstract forceUpdate: Instance option with get, set
     
 [<AutoOpen>]
@@ -138,7 +138,7 @@ module UsePopperExtension =
     type React with
         [<Hook>]
         [<Import("usePopper","react-popper")>]
-        static member inline usePopper(?referenceElement: IRefValue<HTMLElement option>,
-                                       ?popperElement: IRefValue<HTMLElement option>,
+        static member inline usePopper(?referenceElement: U2<Element, VirtualElement>,
+                                       ?popperElement: HTMLElement,
                                        ?options: usePopperOptions) :usePopperReturn =
             jsNative

@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@parcel/config-default': ^2.3.1
   '@parcel/core': ^2.3.2
+  '@parcel/source-map': ^2.0.2
   '@popperjs/core': ^2.11.2
   autoprefixer: ^10.4.2
   parcel: ^2.2.1
@@ -23,6 +24,7 @@ dependencies:
 devDependencies:
   '@parcel/config-default': 2.3.2_@parcel+core@2.3.2+postcss@8.4.6
   '@parcel/core': 2.3.2
+  '@parcel/source-map': 2.0.2
   autoprefixer: 10.4.2_postcss@8.4.6
   parcel: 2.3.2_postcss@8.4.6
   postcss: 8.4.6
